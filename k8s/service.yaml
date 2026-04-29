@@ -1,19 +1,11 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service 
 metadata:
   name: myapp
 spec:
-  replicas: 1
   selector:
-    matchLabels:
-      app: myapp
-  template:
-    metadata:
-      labels:
-        app: myapp
-    spec:
-      containers:
-        - name: myapp
-          image: cbh5369/myapp:7
-          ports:
-            - containerPort: 5000
+    app: myapp
+    ports:
+      - port:80
+        targetPort: 5000
+    type: ClusterIP
