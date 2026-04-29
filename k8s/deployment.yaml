@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: myapp
-          image: testxv/myapp:7
+          image: testxv/myapp:initial
           ports:
             - containerPort: 5000
